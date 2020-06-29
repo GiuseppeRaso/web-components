@@ -28,7 +28,7 @@ if(!window.customElements) {
 	}
 	
 	//object containing all tags
-	  let __defined = {};
+	let __defined = {};
 	  
 	//map of all upgraded items
 	let __map = new WeakMap();
@@ -127,8 +127,7 @@ if(!window.customElements) {
 
 	//upgrade all children; execute immediately for document
 	let __upgradeAll = function(root, include_root) {
-		let elems = getAll(root, include_root);//Array.from(root.getElementsByTagName('*'));
-		//if(include_root && root.tagName) elems.unshift(root);
+		let elems = getAll(root, include_root);
 		for(let i=0;i!=elems.length;i++) 
 			__toUpgradeIfCustom(elems[i]);
 	};
